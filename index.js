@@ -1,5 +1,4 @@
 
-const PORT = 8000;
 const express = require('express');
 const { MongoClient } = require('mongodb');
 const multer = require('multer');
@@ -15,6 +14,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+const PORT = process.env.PORT || 8000;
 // multer for file uploads
 const storage = multer.memoryStorage();
 const upload = multer({ storage: storage });
